@@ -1,0 +1,588 @@
+/*===============================================
+Author: Levan Mebonia
+Username: Levo96
+
+Project: rock_papper_scissors game
+=========================================================*/
+
+/* -------------- GENERALL --------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Mr+Dafoe|Open+Sans+Condensed:300&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html,body {
+  height: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+button {
+  outline:none;
+}
+
+#main {
+  height: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: yellow;
+}
+
+
+/* ===================================================================== */
+
+/* -------- HEADER ----------- */
+
+#header {
+  width: 100%;
+  height: 15%;
+  border-bottom: 4px dotted black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.4rem;
+}
+
+#ROCK_title {
+  font-family: 'Luckiest Guy', cursive;
+  margin-left: 10px;
+  margin-right: 25px;
+}
+
+#PAPER_title {
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#Scissors_title {
+  font-family: 'Mr Dafoe',cursive;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+
+/*=================================================== */
+/* ----------- Start Page ----------- */
+.content-box {
+  width: 100%;
+  height: 85%;
+}
+
+#start_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start_page_buttons {
+  width: 30%;
+  height: 4rem;
+  margin: 3rem auto;
+  padding: 15px 15px;
+  color: black;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: orange;
+  border: 1px solid black;
+  font-weight:bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px black;
+  z-index: 1;
+}
+
+/* -- rules box -- */
+
+#rules_container {
+  z-index: 2;
+  width: 22rem;
+  height: 22rem;
+  background-color: orange;
+  border: 1px solid black;
+  position: absolute;
+  top: 200px;
+  visibility: hidden;
+}
+
+#rc_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.rc_c_items {
+  width:100%;
+}
+
+#rc_c_item_one {
+  height: 15%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#rc_c_item_two {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.game_rules {
+  letter-spacing: 1.2px;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.7em;
+}
+
+#rc_exit_button {
+  padding: 12px 20px;
+  font-weight: 800;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+}
+
+#rc_exit_button:hover {
+  color: red;
+  border-color: red;
+}
+/* -------------------------- */
+
+/* ---- new game input box ----  */
+
+#new_game_container {
+  z-index: 2;
+  width: 35rem;
+  height: 30rem;
+  background-color: orange;
+  border: 1px solid black;
+  position: absolute;
+  top: 140;
+  visibility: hidden;
+}
+
+#ngc_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ngcc_items {
+  width: 100%;
+}
+
+#ngcc_header {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+#ngcc_title {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2.6em;
+  letter-spacing: 12px;
+  margin-left: 30px;
+}
+
+#ngcc_exit_button {
+  align-self: flex-start;
+  padding: 12px 20px;
+  font-weight: 800;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  position:absolute;
+  left: 505px;
+  top:-1px;
+}
+
+#ngcc_exit_button:hover {
+  color: red;
+  border-color: red;
+}
+
+#ngcc_user_input {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+label[for="ngcc_username"] {
+  font-weight: bold;
+  font-family: 'Open Sans Condensed',sans-serif;
+  font-size: 1.4em;
+}
+
+input[id="ngcc_username"] {
+  padding: 15px;
+  margin-left: 10px;
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+}
+
+input[id="ngcc_username"]:active, input[id="ngcc_username"]:focus {
+  color: yellow;
+  border-color: yellow;
+}
+
+#ngcc_rounds {
+  height: 46%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#ngcc_rounds_title {
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 3em;
+}
+
+#buttons_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#buttons_list li {
+  float: left;
+}
+
+.ngcc_rounds_buttons {
+  padding: 10px;
+  width: 5em;
+  height: 5em;
+  background-color: black;
+  border: 4px solid black;
+  color: white;
+  font-size: 1em;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+.ngcc_rounds_buttons:hover {
+  border-color: yellow;
+}
+
+#ngcc_start {
+  height: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#start_game_button {
+  width: 40%;
+  height: 3rem;
+  padding: 0px;
+  border: 3px solid black;
+  background-color: black;
+  color: white;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+#start_game_button:hover {
+  border-color: lime;
+}
+
+/* ------------- */
+
+/* --------- GAME PAGE -------- */
+#game_page {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#game_page_header {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#computer_logo {
+  width: 100px;
+  height: 90px;
+  margin-right: 100px;
+}
+
+#player_name {
+  font-size: 2.2em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+}
+
+#VS {
+  font-size: 4em;
+  margin-top: 20px;
+  font-family: 'Luckiest Guy',cursive;
+}
+
+#main_game {
+  height: 78%;
+  display: flex;
+}
+
+.mg_items {
+  height: 100%;
+}
+
+#mg_left_side {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+#mg_center {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#mg_c_header {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+}
+
+#mg_c_h_rounds_title {
+  font-size: 2em;
+  letter-spacing: 2px;
+  font-family: 'Open Sans Condensed',sans-serif;
+  border-top: 2px solid black;
+  padding-top: 10px;
+  border-left: 2px solid black;
+  padding-left: 20px;
+  border-right: 2px solid black;
+  padding-right: 20px;
+  text-transform: uppercase;
+  color: black;
+}
+
+#round_number {
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Open Sans Condensed',sans-serif;
+  text-transform: uppercase;
+  color:black;
+}
+
+
+
+#mg_c_c_center {
+  width: 100%;
+  height: 70%;
+  display: flex;
+}
+
+
+#mg_c_left_score {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 2px solid black;
+}
+
+#mg_c_ls_score {
+  margin-bottom: 35px;
+  font-size: 1.9em;
+  font-family: 'Open Sans Condensed', cursive;
+  font-style: italic;
+  margin-right: 20px;
+}
+
+#mg_c_ls_n {
+  font-size: 6em;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Luckiest Guy', cursive;
+  text-decoration: underline;
+  margin-right: 20px;
+}
+
+#mg_c_center_result {
+  width:70%;
+  height: 100%;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mg_c_c_r_text {
+  font-family: 'Open Sans Condensed',sans-serif;
+  font-size: 2.2em;
+  text-transform: uppercase;
+}
+
+#mg_c_right_score {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid black;
+}
+
+#mg_c_rs_score {
+  margin-bottom: 35px;
+  font-size: 1.9em;
+  font-family: 'Open Sans Condensed', cursive;
+  font-style: italic;
+  margin-left: 20px;
+}
+
+#mg_c_rs_n {
+  font-size: 6em;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Luckiest Guy', cursive;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+
+#mg_c_result_footer {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#mgcrf_container {
+  border-top: 3px dotted black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 71%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+#mgcrf_container > h4 {
+  font-size: 1.6em;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+
+#mg_right_side {
+  width: 20%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.gm_buttons {
+  width: 120px;
+  height: 120px;
+  border: 5px solid black;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.gm_c_buttons {
+  width: 120px;
+  height: 120px;
+  border: 5px solid black;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+
+#footer {
+  height: 2%;
+}
+
+.footer_buttons {
+  display: none;
+  margin-left: 10px;
+  margin-right: 20px;
+  padding: 10px 10px;
+  color: black;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: orange;
+  border: 1px solid black;
+  font-weight:bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px black;
+  z-index: 1;
+}
+
+/* ========================================== */
+
+/* -------- EXTRAS --------------- */
+
+.start_page_buttons:hover {
+  box-shadow: 3px 3px 5px 3px black;
+}
+
+
+.footer_buttons:hover {
+  box-shadow: 3px 3px 5px 3px black;
+}
+
+
+.rounds_active {
+  border-color: yellow;
+}
+
+.select_btn_active {
+  border-color: navy;
+}
+
+.won_btn_active  {
+  border-color: lime;
+}
+
+.lost_btn_active {
+  border-color: red;
+}
+
+.draw_btn_active {
+  border-color: gray;
+}
+
+/* ===================================== */

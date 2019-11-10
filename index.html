@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors Game </title>
+  <link href="css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="js/game.js"></script>
+</head>
+<body>
+
+<div id="main">
+  <div id="header">
+    <h1><span id="ROCK_title">Rock</span><span id="PAPER_title">Paper</span><span id="Scissors_title">Scissors</span></h1>
+  </div>
+
+  <div id="start_page" class="content-box">
+
+    <div id="rules_container">
+      <div id="rc_container">
+        <div class="rc_c_items" id="rc_c_item_one">
+          <button id="rc_exit_button">X</button>
+        </div>
+        <div class="rc_c_items" id="rc_c_item_two">
+          <p class="game_rules">Papper beats Rock</p>
+          <p class="game_rules">Rock beats Scissors</p>
+          <p class="game_rules">Scissors beats Paper</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="new_game_container">
+      <div id="ngc_container" class="ngcc_items">
+        <div id="ngcc_header" class="ngcc_items">
+          <h2 id="ngcc_title">NEW GAME</h2>
+          <button id="ngcc_exit_button">X</button>
+        </div>
+        <div id="ngcc_user_input" class="ngcc_items">
+          <label for="ngcc_username">USERNAME:</lable>
+            <input type="text" id="ngcc_username" name="ngcc_username"></input>
+        </div>
+        <div id="ngcc_rounds" class="ngcc_items">
+          <h2 id="ngcc_rounds_title">Rounds</h2>
+          <ul id="buttons_list">
+            <li><button id="rounds_3" class="ngcc_rounds_buttons rounds_active" value="3">3</button></li>
+            <li><button id="rounds_5" class="ngcc_rounds_buttons" value="5">5</button></li>
+            <li><button id="rounds_5" class="ngcc_rounds_buttons" value="9">9</button></li>
+          </ul>
+        </div>
+        <div id="ngcc_start" class="ngcc_items">
+          <button id="start_game_button">START</button>
+        </div>
+      </div>
+    </div>
+
+    <button id="rules_button" class="start_page_buttons">Rules</button>
+    <button id="new_game_button" class="start_page_buttons">New Game</button>
+
+  </div>
+  <div id="game_page" class="content-box">
+
+    <div id="game_page_header">
+
+        <h2 id="player_name">PlayerOne</h2>
+        <h2 id="VS">Vs</h2>
+        <img id="computer_logo" src="images/computerplayer.png" />
+    </div>
+
+    <div id="main_game">
+      <div id="mg_left_side" class="mg_items">
+        <img class="gm_buttons" id="ROCK_BUTTON" src="images/rock_button.png"/>
+        <img class="gm_buttons" id="PAPER_BUTTON" src="images/paper_button.png"/>
+        <img class="gm_buttons" id="SCISSORS_BUTTON" src="images/scissors_button.png"/>
+      </div>
+      <div id="mg_center" class="mg_items">
+        <div id="mg_c_header">
+          <h3 id="mg_c_h_rounds_title">Round:<span id="round_number"> </span> </h3>
+        </div>
+        <div id="mg_c_c_center">
+          <div id="mg_c_left_score">
+            <h3 id="mg_c_ls_score">Score</h3>
+            <h2 id="mg_c_ls_n">0</h2>
+          </div>
+          <div id="mg_c_center_result">
+            <h2 id="mg_c_c_r_text"></h2>
+          </div>
+          <div id="mg_c_right_score">
+            <h3 id="mg_c_rs_score">Score</h3>
+            <h2 id="mg_c_rs_n">0</h2>
+          </div>
+        </div>
+        <div id="mg_c_result_footer">
+          <div id="mgcrf_container">
+            <h4 id="result_explainer"></h4>
+          </div>
+
+        </div>
+      </div>
+      <div id="mg_right_side" class="mg_items">
+        <img class="gm_c_buttons" id="ROCK_BUTTON_C" src="images/rock_button.png"/>
+        <img class="gm_c_buttons" id="PAPER_BUTTON_C" src="images/paper_button.png"/>
+        <img class="gm_c_buttons" id="SCISSORS_BUTTON_C" src="images/scissors_button.png"/>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </div>
+
+</div>
+
+
+
+
+</body>
+</html>
