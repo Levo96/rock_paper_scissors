@@ -1,3 +1,3 @@
-# Rock Paper Scissors Game
+# Rock Paper Scissors
 
 view : (https://codepen.io/levo96/full/xxxJbyg)
